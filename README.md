@@ -1,27 +1,27 @@
 This repository features the backend of a Machine Learning application, focusing on detecting defects in PCB images. \
-The detection model used in this case is trained on a YOLOv5 model, using the dataset: **https://www.kaggle.com/datasets/akhatova/pcb-defects/data** \
+The detection model used in this case is trained on a YOLOv5 model, using the dataset: **https://www.kaggle.com/datasets/akhatova/pcb-defects/data** 
 
 In a gist, the **objectives** met by this project include:\
 -Train an object detection model to detect different PCB defects using a public dataset.\
 -Accept input images through an API and return predictions through bounding boxes and labels.\
 -Provide visualized output with bounding boxes drawn on the images.\
--Store the prediction results in a PostgreSQL database. \
+-Store the prediction results in a PostgreSQL database. 
 
 **Features:**
 -Machine Learning Model: Trained on a public dataset using a YOLO-based object detection model. \
 -Backend: Built using FastAPI to expose the following endpoints: \
           **POST /predict:** \
           (POST): Accept image data and confidence limit, return predictions(bounding boxes and labels) as structured data. \
-          Request: Image file (multipart/form-data) \
+----------Request: Image file (multipart/form-data) \
                   Confidence limit (float, optional) \
           Response: List of predictions with bounding boxes and their confidence scores. \
           **POST /visualize**: \
           Accepts image data and a confidence limit, returning an image with drawn bounding boxes and labels. \
            Request: Image file (multipart/form-data) \
                   Confidence limit (float, optional) \
-          Response: Image with bounding boxes drawn around detected defects. \
+          Response: Image with bounding boxes drawn around detected defects. 
           
--Database Integration: PostgreSQL stores the results of the predictions for convenient retrieval and logging. \
+-Database Integration: PostgreSQL stores the results of the predictions for convenient retrieval and logging. 
 
 **Installation:** \
 To get this running locally, make sure you meet these prerequisites: \
