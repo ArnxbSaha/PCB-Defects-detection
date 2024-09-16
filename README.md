@@ -44,12 +44,12 @@ To get this running locally, make sure you meet these prerequisites:
    If you wish to train YOLOv5 according to new parameters, you can make use of the 'Dataprocess.py' and 'testing.py' codes;
    - 'Dataprocess.py' essentially does the required data preprocessing and makes a new dataset format appropriate for the YOLO format; \
      The code resizes the images and splits them into training, validation, and testing folders. 
-   - 'Testing.py' is a simple testing code to make sure the trained model is working, before moving on to deploying the model onto a backend. 
+   - 'testing.py' is a simple testing code to make sure the trained model is working, before moving on to deploying the model onto a backend. 
    - Whilst using these codes, make sure to change the file directories to their suitable locations on your device.
      
 4. Setting up the backend using FASTAPI (& PostgreSQL):
    Make sure you have your trained model by this point, or you are welcome to use my pre-trained model- 'best.pt' 
-   - Here, depending on if one wishes to integrate PostgreSQL or wants to opt out, I have provided two codes; 
+   - Here, depending on whether one wishes to integrate PostgreSQL or wants to opt out, I have provided two codes; 
    - The 'main.py' integrates the trained model onto the backend using FASTAPI, with two main endpoints - /predict and /visualize, and then stores predictions in a database, such as: 
        1. Confidence Limit 
        2. Dimensions of Bounding Boxes 
@@ -63,7 +63,7 @@ To get this running locally, make sure you meet these prerequisites:
       uvicorn main:app --reload 
     - Once the server is up, you should be able to interact with the endpoints at: **http://127.0.0.1:8000/docs**
       
-    -  If you opt out of PostgreSQL, use the code 'app.py', and the rest of the steps should be the same skipping the database setting up; \
+    -  If you opt out of PostgreSQL, use the code 'app.py', and the rest of the steps should be the same skipping the database setting-up steps; \
       Use: uvicorn app:app --reload
 
  5. Access the stored data:
